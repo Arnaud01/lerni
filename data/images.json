@@ -1,0 +1,92 @@
+[
+	[
+		{ "id" : "ball", "name" : "ballon", "url" : "ballon.mp3" },
+		{ "id" : "apple", "name" : "pomme", "url" : "pomme.mp3" },
+		{ "id" : "bee", "name" : "abeille", "url" : "abeille.mp3" }
+	],
+	[
+		{ "id" : "apricot", "name" : "abricot", "url" : "abricot.mp3" },
+		{ "id" : "chocolate", "name" : "chocolat", "url" : "chocolat.mp3" },
+		{ "id" : "bed", "name" : "lit", "url" : "lit.mp3" }
+	],
+	[
+		{ "id" : "grape", "name" : "raisin", "url" : "raisin.ogg" },
+		{ "id" : "horse", "name" : "cheval", "url" : "cheval.mp3" },
+		{ "id" : "lemon", "name" : "citron", "url" : "citron.ogg" }
+	],
+	[
+		{ "id" : "banana", "name" : "banane", "url" : "banane.ogg" },
+		{ "id" : "cow", "name" : "vache", "url" : "vache.mp3" },
+		{ "id" : "orange", "name" : "orange", "url" : "orange.ogg" }
+	],
+	[
+		{ "id" : "bear", "name" : "ours", "url" : "ours.mp3" },
+		{ "id" : "cherry", "name" : "cerise", "url" : "cerise.mp3" },
+		{ "id" : "sheep", "name" : "mouton", "url" : "mouton.mp3" }
+	],
+	[
+		{ "id" : "strawberry", "name" : "fraise", "url" : "fraise.mp3" },
+		{ "id" : "duck", "name" : "canard", "url" : "canard.mp3" },
+		{ "id" : "neck", "name" : "cou", "url" : "cou.mp3" },
+		{ "id" : "dog", "name" : "chien", "url" : "chien.mp3" }
+	],
+	[
+		{ "id" : "cat", "name" : "chat", "url" : "chat.mp3" },
+		{ "id" : "fish", "name" : "poisson", "url" : "poisson.mp3" },
+		{ "id" : "arm", "name" : "bras", "url" : "bras.mp3" },
+		{ "id" : "laugh", "name" : "rire", "url" : "rire.mp3" }
+	],
+	[
+		{ "id" : "bird", "name" : "oiseau", "url" : "oiseau.mp3" },
+		{ "id" : "back", "name" : "dos", "url" : "dos.mp3" },
+		{ "id" : "sad", "name" : "triste", "url" : "triste.mp3" },
+		{ "id" : "rabbit", "name" : "lapin", "url" : "lapin.mp3" }
+	],
+	[
+		{ "id" : "happy", "name" : "heureux", "url" : "heureux.mp3" },
+		{ "id" : "camel", "name" : "chameau", "url" : "chameau.mp3" },
+		{ "id" : "whale", "name" : "baleine", "url" : "baleine.mp3" },
+		{ "id" : "lion", "name" : "lion", "url" : "lion.mp3" }
+	],
+	[
+		{ "id" : "hen", "name" : "poule", "url" : "poule.mp3" },
+		{ "id" : "ankle", "name" : "cheville", "url" : "cheville.mp3" },
+		{ "id" : "dolphin", "name" : "dauphin", "url" : "dauphin.mp3" },
+		{ "id" : "nose", "name" : "nez", "url" : "nez.mp3" }
+	],
+	[
+		{ "id" : "wolf", "name" : "loup", "url" : "loup.mp3" },
+		{ "id" : "crab", "name" : "crabe", "url" : "crabe.mp3" },
+		{ "id" : "chin", "name" : "menton", "url" : "menton.mp3" },
+		{ "id" : "mouse", "name" : "souris", "url" : "souris.mp3" },
+		{ "id" : "feather", "name" : "plume", "url" : "plume.mp3" }
+	],
+	[
+		{ "id" : "knee", "name" : "genou", "url" : "genou.mp3" },
+		{ "id" : "koala", "name" : "koala", "url" : "koala.mp3" },
+		{ "id" : "panda", "name" : "panda", "url" : "panda.mp3" },
+		{ "id" : "fox", "name" : "renard", "url" : "renard.mp3" },
+		{ "id" : "frog", "name" : "grenouille", "url" : "grenouille.mp3" }
+	],
+	[
+		{ "id" : "ear", "name" : "oreille", "url" : "oreille.mp3" },
+		{ "id" : "giraffe", "name" : "girafe", "url" : "girafe.mp3" },
+		{ "id" : "kiwi", "name" : "kiwi", "url" : "kiwi.mp3" },
+		{ "id" : "crocodile", "name" : "crocodile", "url" : "crocodile.mp3" },
+		{ "id" : "turtle", "name" : "tortue", "url" : "tortue.mp3" }
+	],
+	[
+		{ "id" : "colt", "name" : "poulain", "url" : "poulain.mp3" },
+		{ "id" : "calf", "name" : "veau", "url" : "veau.mp3" },
+		{ "id" : "foot", "name" : "pied", "url" : "pied.mp3" },
+		{ "id" : "chimp", "name" : "singe", "url" : "singe.mp3" },
+		{ "id" : "elbow", "name" : "coude", "url" : "coude.mp3" }
+	],
+	[
+		{ "id" : "jaguar", "name" : "jaguar", "url" : "jaguar.mp3" },
+		{ "id" : "finger", "name" : "doigt", "url" : "doigt.mp3" },
+		{ "id" : "eyes", "name" : "yeux", "url" : "yeux.mp3" },
+		{ "id" : "kitten", "name" : "chaton", "url" : "chaton.mp3" },
+		{ "id" : "tomato", "name" : "tomate", "url" : "tomate.mp3" }
+	]
+]

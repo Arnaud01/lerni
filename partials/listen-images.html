@@ -1,0 +1,25 @@
+<div class="container" id="main"  ng-controller="CtrlListenImages">
+	<div class="row" id="row">
+
+<div class="col-md-3" id="sidebar">
+	<h3><strong>Écouter les images</strong></h3>
+
+		<div ng-repeat="serie in images">
+			<div><button type="button" class="btn btn-info menu-item" ng-click="initialize($index)"><span class="glyphicon glyphicon-volume-up"></span> série {{$index+1}}</button> <div ng-class="prenomEcrireSyllabes[($index)]"></div></div>
+		</div>
+
+</div> <!-- ferme col-md-3 -->
+
+
+<div class="col-md-9">
+	
+	<div id="images" class="marginTop">
+		<div ng-repeat="son in images_aleatoires" class="pull-left">
+		
+		<img ng-src="{{'images/' + son.id + '.png'}}"  ng-click="play(son.id)" class="image" >
+		
+		<audio ng-src="{{'sounds/mots/' + son.url}}" id="{{son.id}}"></audio>
+		</div>
+	</div>
+
+</div><!-- ferme col-md-9 -->

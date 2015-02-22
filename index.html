@@ -1,0 +1,192 @@
+
+<!--
+Copyright (C) 2015 Arnaud Limon
+
+English
+    This file is part of Lerni
+
+    Lerni is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Lerni is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with Lerni.  If not, see <http://www.gnu.org/licenses/>.
+
+
+Français
+    Lerni est un logiciel libre : vous pouvez le redistribuer ou le
+    modifier selon les termes de la GNU Affero General Public Licence tels que
+    publiés par la Free Software Foundation : à votre choix, soit la
+    version 3 de la licence, soit une version ultérieure quelle qu'elle
+    soit.
+
+    Lerni est distribué dans l'espoir qu'il sera utile, mais SANS AUCUNE
+    GARANTIE ; sans même la garantie implicite de QUALITÉ MARCHANDE ou
+    D'ADÉQUATION À UNE UTILISATION PARTICULIÈRE. Pour plus de détails,
+    reportez-vous à la GNU Affero General Public License.
+ 
+    Vous devez avoir reçu une copie de la GNU Affero General Public License
+    avec Lerni. Si ce n'est pas le cas, consultez
+    <http://www.gnu.org/licenses/> 
+-->
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="fr" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="fr" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="fr" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+
+<html lang="fr" ng-app="myApp" xmlns:ng="http://angularjs.org" class="no-js"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Logiciel CP</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="css/jquery-ui.css"/>
+  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body ng-controller="Ctrl">
+	
+<!------------------------------------- barre de navigation en haut -------------------------------->
+
+<div class="navbar navbar-inverse" role="navigation">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#/home"><span class="glyphicon glyphicon-home"></span> Logiciel CP</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				
+				<!--
+				<li ng-class="getClass('/listenImages')"><a href="#/listen">Écouter <span class="glyphicon glyphicon-headphones"></span></a></li>
+				
+				-->
+				
+				<li ng-class="getClass('/listen')" class="dropdown">
+				  <a href="#/listenImages" class="dropdown-toggle" data-toggle="dropdown">Écouter <span class="glyphicon glyphicon-headphones"></span> <span class="caret"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li ng-class="getClass('/listenImages')"><a href="#/listenImages">Images</a></li>
+					<li ng-class="getClass('/listenSyllables')"><a href="#/listenSyllables">Syllabes</a></li>
+					<li ng-class="getClass('/listenWords')"><a href="#/listenWords">Mots</a></li>
+				  </ul>
+				</li>
+				
+				<li ng-class="getClass('/readSyllables')" class="dropdown">
+				  <a href="#/readSyllables" class="dropdown-toggle" data-toggle="dropdown">Lire <span class="glyphicon glyphicon-book"></span> <span class="caret"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li ng-class="getClass('/readSyllables')"><a href="#/readSyllables">Syllabes</a></li>
+					<li ng-class="getClass('/readLetters')"><a href="#/readLetters">Lettres</a></li>
+					<li ng-class="getClass('/readWords')"><a href="#/readWords">Mots</a></li>
+				  </ul>
+				</li>
+				
+				
+				
+				<li ng-class="getClass('/writeSyllables')" class="dropdown">
+				  <a href="#/writeSyllables" class="dropdown-toggle" data-toggle="dropdown">Écrire <span class="glyphicon glyphicon-pencil"></span> <span class="caret"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li ng-class="getClass('/writeSyllables')"><a href="#/writeSyllables">Syllabes</a></li>
+					<li ng-class="getClass('/writeLetters')"><a href="#/writeLetters">Lettres</a></li>
+					<li ng-class="getClass('/writeWords')"><a href="#/writeWords">Mots</a></li>
+				  </ul>
+				</li>
+				
+				<li ng-class="getClass('/readNumbers')" class="dropdown">
+				  <a href="#/readNumbers" class="dropdown-toggle" data-toggle="dropdown">Nombres <span class="glyphicon glyphicon-sort-by-order"></span> <span class="caret"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li ng-class="getClass('/readNumbers')"><a href="#/readNumbers">Lire</a></li>
+					<li ng-class="getClass('/writeNumbers')"><a href="#/writeNumbers">Écrire</a></li>
+				  </ul>
+				</li>
+
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#/home"><span class="glyphicon glyphicon-user"></span> {{prenomActuel}}</a></li>
+				<li><a href="#/home" data-toggle="modal" data-target="#myModal">Changer <span class="glyphicon glyphicon-refresh"></span></a></li>
+			</ul>
+
+		</div>
+	</div>
+</div>
+
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+
+		<div id="idview" ng-view></div> <!-- ajoute col-md-9 -->
+
+
+<!------------------------------------- Modal login -------------------------------->
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Clique sur ton étiquette ou écris ton prénom.</h4>
+				
+			</div>		
+			<div class="modal-body">
+				<p><button href="#" ng-repeat="item in $storage.prenoms" data-dismiss="modal" class="btn btn-lg btn-primary" ng-click="choixPrenom(item)">{{item}}</button>
+				</p>
+				<p><form ng-submit="ajoute(prenom);" autocomplete="off"><input type="text" value="place" name="inputprenom" id="inputprenom" ng-model="prenom" size="10" maxlength="25" /> <input type="submit" value="Ajoute ton prénom" class="btn btn-default" /></form>
+				</p>
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="js/angular-touch.min.js"></script>
+  <script src="js/angular-dragdrop.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/ngstorage/ngStorage.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controller.js"></script>
+  <script src="js/controller-read-syllables.js"></script>
+  <script src="js/controller-read-letters.js"></script>
+  <script src="js/controller-read-words.js"></script>
+  <script src="js/controller-read-numbers.js"></script>
+  <script src="js/controller-write-numbers.js"></script>
+  <script src="js/controller-write-syllables.js"></script>
+  <script src="js/controller-write-letters.js"></script>
+  <script src="js/controller-write-words.js"></script>
+  <script src="js/controller-listen-images.js"></script>
+   <script src="js/controller-listen-syllables.js"></script>
+  <script src="js/controller-listen-words.js"></script>
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+
+</body>
+</html>

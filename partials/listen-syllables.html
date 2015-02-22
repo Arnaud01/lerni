@@ -1,0 +1,28 @@
+<div class="container" id="main"  ng-controller="CtrlListenSyllables">
+	<div class="row" id="row">
+
+<div class="col-md-3" id="sidebar">
+	<h3><strong>Écouter les syllabes</strong></h3>
+
+		<div ng-repeat="serie in syllabes">
+			<div><strong>série {{$index+1}}</strong></div>
+			<div><button type="button" class="btn btn-info menu-item" ng-click="initialize($index,'majuscule')"><span class="glyphicon glyphicon-volume-up"></span> majuscule</button> <div ng-class="prenomEcrireSyllabes[($index)]"></div></div>
+			<div><button type="button" class="btn btn-info menu-item" ng-click="initialize($index,'script')"><span class="glyphicon glyphicon-volume-up"></span> script</button> <div ng-class="prenomEcrireSyllabes[($index)]"></div></div>
+			<div><button type="button" class="btn btn-info menu-item" ng-click="initialize($index,'attache')"><span class="glyphicon glyphicon-volume-up"></span> attaché</button> <div ng-class="prenomEcrireSyllabes[($index)]"></div></div>
+		</div>
+
+</div> <!-- ferme col-md-3 -->
+
+
+<div class="col-md-9">
+	
+		<div id="syllabes" class="marginTop">
+		<h1 ng-repeat="son in syllabes_aleatoires" class="pull-left contour text-center" data-drag="true" jqyoui-draggable data-jqyoui-options="{snap:true}" >
+				<div class="etiquette" ng-class="ecriture" ng-click="play(son)">{{son}}</div>
+				<div class="glyphicon glyphicon-move deplacement"  ></div>
+			<audio ng-src="{{'sounds/syllabes/' + son+'.ogg'}}" id="{{son}}"></audio>
+		<!--	<audio ng-src="{{'sounds/syllabes/' + syllabes[serie][n] + '.ogg'}}" id="audio"></audio> -->
+		</h1>
+	</div>
+
+</div><!-- ferme col-md-9 -->
