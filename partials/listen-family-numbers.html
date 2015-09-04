@@ -1,0 +1,28 @@
+<div class="container" id="main"  ng-controller="CtrlListenFamilyNumbers">
+	<div class="row" id="row">
+
+
+
+<div class="col-md-12">
+
+	<table class="familles">
+
+				<tr ng-repeat="ligne in donnees">
+
+					<td class="texteFamille"  ng-style=" { 'background-color' : '{{ ligne.couleur }}' }">{{ligne.famille}}</td>
+
+					<td ng-repeat="cellule in ligne.nombres" ng-class=" { 'firstletter' : {{ligne.firstletter}} } " ng-style=" { 'background-color' : '{{ ligne.couleur }}' }">
+											<!-- si ligne.firstletter = true, ajouter la classe firstletter -->
+
+						<button type="button" class="btn btn-lg btn-default cellule" ng-click="play(cellule)">{{cellule}}</button>
+
+						<audio ng-src="{{'sounds/nombres/' + cellule + '.ogg'}}" id="{{cellule}}"></audio>
+
+					</td>
+
+				</tr>
+
+	</table>
+
+
+</div><!-- ferme col-md-12 -->

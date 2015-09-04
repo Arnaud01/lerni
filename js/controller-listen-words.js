@@ -1,21 +1,21 @@
 (function(){   // anonymous wrapper : rien n'a besoin d'être global
 
 	var app = angular.module('myApp.controllerListenWords',[]);
-	
+
 	app.controller('CtrlListenWords', function($scope, $http, $window) {
-		
+
 	$http.get('data/images.json').success(function(data) {
 	   $scope.images = data;
 	});
-	
-	$scope.play = function(son) {	
+
+	$scope.play = function(son) {
 		document.getElementById(son).play();
 	}
-	
-	
+
+
 		// -------------------------- fonctions ------------------------------------------//
-		
-		
+
+
 	var shuffleArray = function(array) {
 		var m = array.length, t, i;
 
@@ -31,20 +31,20 @@
 		}
 		return array;
 	}
-	
-	
-	$scope.initialize = function(serie) { // ------------------------ fonction initialise()
-		
+
+
+	$scope.initialise = function(serie) { // ------------------------ fonction initialise()
+
 		$scope.serie = serie;
-		
+
 		$scope.images_aleatoires = [];
-		
+
 		$scope.images_aleatoires = $scope.images[serie].slice();	 // on duplique les mots de la série
-		
+
 		shuffleArray($scope.images_aleatoires);
-	
+
 	}
-	
+
 });
-	
+
 })();

@@ -1,6 +1,11 @@
 [
+		["fa","fi","fo"],
+		["sa","si","so"],
 		["ra","ri","ro"],
-		["ma", "mi", "mo"],		
+		["ra", "sa", "fa"],
+		["ri", "si", "fi"],
+		["ro", "so", "fo"],
+		["ma", "mi", "mo"],
 		["la", "li", "lo"],
 		["ra", "ma", "la"],
 		["ri", "mi", "li"],

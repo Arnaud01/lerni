@@ -5,8 +5,17 @@ font-family: 'cursiveff';
 src: url('../polices/cursive.ttf');
 }
 
-html, body, #row, #idview { /* indispensable pour que la hauteur de la sidebar fonctionne */
+html, body, #row, #idview, .height100 { /* indispensable pour que la hauteur de la sidebar fonctionne */
 height:100%;
+}
+
+.height50 { /* indispensable pour que la hauteur de la sidebar fonctionne */
+height:50%;
+}
+
+.overflowauto {
+    	overflow:auto;
+
 }
 
 #main {
@@ -18,9 +27,8 @@ height:80%;
 }
 
 #sidebar {
-	height:100%;
-	overflow:auto;
-	background-color:#E5E5E5;
+	height:400px !important;
+	overflow:auto !important;
 
 }
 
@@ -75,15 +83,6 @@ height:80%;
 	width:5em;
 }
 
-#menu-niveaux {
-    border-collapse: collapse;
-}
-
-#menu-niveaux td {
-/*	border: 1px solid black; */
-	padding: 5px;
-}
-
 #modalError.modal.fade .modal-dialog {
   -webkit-transform: translate(0, 0%);
   -ms-transform: translate(0, 0%);
@@ -106,7 +105,7 @@ height:80%;
 font-size: 1em;
 width:10em;
 font-family:arial,serif;
-text-transform: uppercase;  
+text-transform: uppercase;
 }
 
 .script {
@@ -119,6 +118,21 @@ font-family:arial,serif;
 font-family:cursiveff;
 font-size: 1.3em;
 width:7em;
+}
+
+.majusculeAlphabet {
+font-size: 1.2em;
+text-transform: uppercase;
+}
+
+.scriptAlphabet {
+font-size: 1.7em;
+font-family:arial,serif;
+}
+
+.attacheAlphabet {
+font-family:cursiveff;
+font-size: 2em;
 }
 
 .contour {
@@ -174,6 +188,9 @@ width:7em;
 font-size:1.5em;
 }
 
+.valign {
+    vertical-align: middle;
+}
 .green {
 background-color:green;
 width:1.5em;
@@ -217,15 +234,6 @@ height:1.4em;
 margin-top:4px;
 }
 
-#ok {
-font-size:1.2em;
-}
-
-.clear-input {
-height:3.5em;
-margin-bottom:5px;
-}
-
 .image {
  border:1px #7FC6BC solid;
  border-radius: 10px;
@@ -237,3 +245,45 @@ margin-bottom:5px;
 	margin-top:40px;
 }
 
+.marginTop100 {
+	margin-top:100px;
+}
+
+.overflow {
+	white-space:nowrap;
+	height:100px;
+	overflow:auto;
+}
+
+.overflowAlphabet {
+	white-space:nowrap;
+	overflow:auto;
+}
+
+.cellule {
+    color : blue;
+}
+
+.cellule:hover {
+    color:blue;
+}
+
+.firstletter button::first-letter { /* Utilisez :first-letter si le support pour IE8 ou antérieur est nécessaire. */
+  color: red;
+}
+
+.texteFamille {
+    font-family: arial, sans-serif;
+    font-size:1.2em;
+}
+
+table.familles td {
+    text-align:right;
+    border:1px solid black;
+    padding:5px;
+}
+
+table.familles {
+    margin-top:10px;
+    margin-bottom:30px;
+}

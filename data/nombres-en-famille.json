@@ -1,0 +1,12 @@
+[
+	{"famille":"","firstletter":"false","couleur":"","nombres": ["0","1","2","3","4","5","6","7","8","9"] },
+	{"famille":"famille verte des 10","firstletter":"true","couleur":"#99ff66","nombres": ["10","11", "12", "13","14","15","16","17","18","19"] },
+	{"famille":"famille jaune des 20","firstletter":"true","couleur":"#ffff66","nombres":["20","21","22","23","24","25","26","27","28","29"]},
+	{"famille":"famille orange des 30","firstletter":"true","couleur":"#ff9966","nombres":["30","31","32","33","34","35","36","37","38","39"]},
+	{"famille":"famille rose des 40","firstletter":"true","couleur":"#FD6C9E","nombres":["40","41","42","43","44","45","46","47","48","49"]},
+	{"famille":"famille rouge des 50","firstletter":"true","couleur":"#ff373a","nombres":["50","51","52","53","54","55","56","57","58","59"]},
+	{"famille":"famille violette des 60","firstletter":"true","couleur":"#a138fb","nombres":["60","61","62","63","64","65","66","67","68","69"]},
+	{"famille":"famille bleu foncé des 70","firstletter":"true","couleur":"#6689ff","nombres":["70","71","72","73","74","75","76","77","78","79"]},
+	{"famille":"famille bleu clair des 80","firstletter":"true","couleur":"#66caff","nombres":["80","81","82","83","84","85","86","87","88","89"]},
+	{"famille":"famille grise des 90","firstletter":"true","couleur":"#999999","nombres":["90","91","92","93","94","95","96","97","98","99"]}
+]

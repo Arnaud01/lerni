@@ -1,0 +1,26 @@
+<div class="container" id="main"  ng-controller="CtrlListenTableNumbers">
+	<div class="row" id="row">
+
+
+
+<div class="col-md-12">
+
+	<table>
+
+				<tr ng-repeat="ligne in nombres" >
+
+					<td ng-repeat="cellule in ligne">
+
+						<button type="button" class="btn btn-lg btn-default" ng-click="play(cellule)">{{cellule}}</button>
+
+						<audio ng-src="{{'sounds/nombres/' + cellule + '.ogg'}}" id="{{cellule}}"></audio>
+
+					</td>
+
+				</tr>
+
+	</table>
+
+
+
+</div><!-- ferme col-md-12 -->

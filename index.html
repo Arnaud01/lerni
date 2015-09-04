@@ -30,24 +30,24 @@ Français
     GARANTIE ; sans même la garantie implicite de QUALITÉ MARCHANDE ou
     D'ADÉQUATION À UNE UTILISATION PARTICULIÈRE. Pour plus de détails,
     reportez-vous à la GNU Affero General Public License.
- 
+
     Vous devez avoir reçu une copie de la GNU Affero General Public License
     avec Lerni. Si ce n'est pas le cas, consultez
-    <http://www.gnu.org/licenses/> 
+    <http://www.gnu.org/licenses/>
 -->
 
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html lang="fr" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="fr" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="fr" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> 
+<!--[if gt IE 8]><!-->
 
 <html lang="fr" ng-app="myApp" xmlns:ng="http://angularjs.org" class="no-js"> <!--<![endif]-->
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Logiciel CP</title>
+  <title>Lerni</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -60,37 +60,34 @@ Français
 </head>
 
 <body ng-controller="Ctrl">
-	
+
 <!------------------------------------- barre de navigation en haut -------------------------------->
 
-<div class="navbar navbar-inverse" role="navigation">
+<div class="navbar navbar-default" role="navigation">
 	<div class="container">
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".menu1">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#/home"><span class="glyphicon glyphicon-home"></span> Logiciel CP</a>
+			<a class="navbar-brand" ng-class="getClass('/home')" href="#/home"><span class="glyphicon glyphicon-home"></span></a>
 		</div>
-		<div class="navbar-collapse collapse">
+		<div class="navbar-collapse collapse menu1">
 			<ul class="nav navbar-nav">
-				
-				<!--
-				<li ng-class="getClass('/listenImages')"><a href="#/listen">Écouter <span class="glyphicon glyphicon-headphones"></span></a></li>
-				
-				-->
-				
-				<li ng-class="getClass('/listen')" class="dropdown">
+
+				<li ng-class="getClass('/listenImages')" class="dropdown">
 				  <a href="#/listenImages" class="dropdown-toggle" data-toggle="dropdown">Écouter <span class="glyphicon glyphicon-headphones"></span> <span class="caret"></span></a>
 				  <ul class="dropdown-menu" role="menu">
 					<li ng-class="getClass('/listenImages')"><a href="#/listenImages">Images</a></li>
 					<li ng-class="getClass('/listenSyllables')"><a href="#/listenSyllables">Syllabes</a></li>
 					<li ng-class="getClass('/listenWords')"><a href="#/listenWords">Mots</a></li>
+                    <li ng-class="getClass('/listenAlphabet')"><a href="#/listenAlphabet">Alphabet</a></li>
+                    <li ng-class="getClass('/listenImagesEn')"><a href="#/listenImagesEn"><img src="css/flag.png" /></a></li>
 				  </ul>
 				</li>
-				
+
 				<li ng-class="getClass('/readSyllables')" class="dropdown">
 				  <a href="#/readSyllables" class="dropdown-toggle" data-toggle="dropdown">Lire <span class="glyphicon glyphicon-book"></span> <span class="caret"></span></a>
 				  <ul class="dropdown-menu" role="menu">
@@ -99,9 +96,9 @@ Français
 					<li ng-class="getClass('/readWords')"><a href="#/readWords">Mots</a></li>
 				  </ul>
 				</li>
-				
-				
-				
+
+
+
 				<li ng-class="getClass('/writeSyllables')" class="dropdown">
 				  <a href="#/writeSyllables" class="dropdown-toggle" data-toggle="dropdown">Écrire <span class="glyphicon glyphicon-pencil"></span> <span class="caret"></span></a>
 				  <ul class="dropdown-menu" role="menu">
@@ -110,18 +107,31 @@ Français
 					<li ng-class="getClass('/writeWords')"><a href="#/writeWords">Mots</a></li>
 				  </ul>
 				</li>
-				
-				<li ng-class="getClass('/readNumbers')" class="dropdown">
-				  <a href="#/readNumbers" class="dropdown-toggle" data-toggle="dropdown">Nombres <span class="glyphicon glyphicon-sort-by-order"></span> <span class="caret"></span></a>
+
+				<li ng-class="getClass('/listenNumbers')" class="dropdown">
+				  <a href="#/listenNumbers" class="dropdown-toggle" data-toggle="dropdown">Nombres <span class="glyphicon glyphicon-sort-by-order"></span> <span class="caret"></span></a>
 				  <ul class="dropdown-menu" role="menu">
+                    <li ng-class="getClass('/listenNumbers')"><a href="#/listenNumbers">Écouter</a></li>
 					<li ng-class="getClass('/readNumbers')"><a href="#/readNumbers">Lire</a></li>
 					<li ng-class="getClass('/writeNumbers')"><a href="#/writeNumbers">Écrire</a></li>
+					<li ng-class="getClass('/listenLineNumbers')"><a href="#/listenLineNumbers">File numérique</a></li>
+                    <li ng-class="getClass('/listenTableNumbers')"><a href="#/listenTableNumbers">Tableau des nombres</a></li>
+                    <li ng-class="getClass('/listenFamilyNumbers')"><a href="#/listenFamilyNumbers">Familles des nombres</a></li>
 				  </ul>
 				</li>
 
+				<li ng-class="getClass('/calculAdditions')" class="dropdown">
+                    <a href="#/calculAdditions" class="dropdown-toggle" data-toggle="dropdown">Calcul <span class="glyphicon glyphicon-plus-sign"></span> <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li ng-class="getClass('/calculAdditions')"><a href="#/calculAdditions">Additions</a></li>
+                      <li ng-class="getClass('/tablesAddition')"><a href="#/tablesAddition">Tables d'addition</a></li>
+                      <li ng-class="getClass('/tablesMultiplication')"><a href="#/tablesMultiplication">Tables de multiplication</a></li>
+                    </ul>
+                </li>
+
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#/home"><span class="glyphicon glyphicon-user"></span> {{prenomActuel}}</a></li>
+				<li ng-cloak><a href="#/home"><span class="glyphicon glyphicon-user"></span> {{prenomActuel}}</a></li>
 				<li><a href="#/home" data-toggle="modal" data-target="#myModal">Changer <span class="glyphicon glyphicon-refresh"></span></a></li>
 			</ul>
 
@@ -143,26 +153,24 @@ Français
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				
+
 				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
 				</button>
 				<h4 class="modal-title" id="myModalLabel">Clique sur ton étiquette ou écris ton prénom.</h4>
-				
-			</div>		
+
+			</div>
 			<div class="modal-body">
 				<p><button href="#" ng-repeat="item in $storage.prenoms" data-dismiss="modal" class="btn btn-lg btn-primary" ng-click="choixPrenom(item)">{{item}}</button>
 				</p>
 				<p><form ng-submit="ajoute(prenom);" autocomplete="off"><input type="text" value="place" name="inputprenom" id="inputprenom" ng-model="prenom" size="10" maxlength="25" /> <input type="submit" value="Ajoute ton prénom" class="btn btn-default" /></form>
 				</p>
-				
+
 			</div>
 		</div>
 	</div>
 </div>
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
+
   <script src="js/jquery.min.js"></script>
   <script src="js/jquery-ui.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -177,14 +185,23 @@ Français
   <script src="js/controller-read-syllables.js"></script>
   <script src="js/controller-read-letters.js"></script>
   <script src="js/controller-read-words.js"></script>
+  <script src="js/controller-listen-numbers.js"></script>
   <script src="js/controller-read-numbers.js"></script>
   <script src="js/controller-write-numbers.js"></script>
   <script src="js/controller-write-syllables.js"></script>
   <script src="js/controller-write-letters.js"></script>
   <script src="js/controller-write-words.js"></script>
   <script src="js/controller-listen-images.js"></script>
+  <script src="js/controller-listen-images-en.js"></script>
    <script src="js/controller-listen-syllables.js"></script>
   <script src="js/controller-listen-words.js"></script>
+  <script src="js/controller-listen-alphabet.js"></script>
+  <script src="js/controller-listen-line-numbers.js"></script>
+  <script src="js/controller-listen-table-numbers.js"></script>
+  <script src="js/controller-listen-family-numbers.js"></script>
+  <script src="js/controller-calcul-additions.js"></script>
+  <script src="js/controller-tables-addition.js"></script>
+  <script src="js/controller-tables-multiplication.js"></script>
   <script src="js/filters.js"></script>
   <script src="js/directives.js"></script>
 

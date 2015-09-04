@@ -1,0 +1,20 @@
+<div class="container" id="main"  ng-controller="CtrlListenLineNumbers">
+	<div class="row" id="row">
+
+
+
+<div class="col-md-12">
+
+
+	<div class="marginTop100 overflow">
+
+				<span ng-repeat="nombre in nombres[0]" class="text-nowrap text-inline" ><button type="button" class="btn btn-lg btn-default" ng-click="play(nombre)">{{nombre}}</button>
+		<audio ng-src="{{'sounds/nombres/' + nombre + '.ogg'}}" id="{{nombre}}"></audio>
+		</span>
+
+
+	</div>
+
+
+
+</div><!-- ferme col-md-12 -->
