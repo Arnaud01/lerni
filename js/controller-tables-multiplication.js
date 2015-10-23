@@ -26,33 +26,6 @@
 		$scope.nombres0a10 = [0,1,2,3,4,5,6,7,8,9,10];
 
 
-	var shuffleArray = function(array) { // Mélange un tableau
-		var m = array.length, t, i;
-
-		// While there remain elements to shuffle
-		while (m) {
-		// Pick a remaining element…
-		i = Math.floor(Math.random() * m--);
-
-		// And swap it with the current element.
-		t = array[m];
-		array[m] = array[i];
-		array[i] = t;
-		}
-		return array;
-	}
-
-	$scope.effacer = function() {
-		$scope.prenomCompile = $scope.prenomActuel + '-tablesMultiplication';
-		$localStorage[$scope['prenomCompile']] = [];
-		$scope.prenomTablesMultiplication = [];
-	}
-
-	$scope.clearInput = function() {
-		$scope.reponseEleve = '';
-		$('#inputEleve').focus();
-	}
-
 	$(".pop").popover({ html : true, trigger: 'focus' }); // active le popover dans le modal : afficher la réponse
 
 	$('#bloc-central').hide();
@@ -75,6 +48,23 @@
 	$('#bilan').hide();
 
 	// -------------------------- fonctions ------------------------------------------//
+
+	var shuffleArray = function(array) { // Mélange un tableau
+		var m = array.length, t, i;
+
+		// While there remain elements to shuffle
+		while (m) {
+		// Pick a remaining element…
+		i = Math.floor(Math.random() * m--);
+
+		// And swap it with the current element.
+		t = array[m];
+		array[m] = array[i];
+		array[i] = t;
+		}
+		return array;
+	}
+
 
 	$scope.initialise = function(serie) { // ------------------------ fonction initialise()
 
@@ -115,6 +105,8 @@
 			$('#bravo').css('visibility', 'visible');
 		}
 
+		$scope.reponse = '';
+
 		$('#reponse').focus();
 
 		// $scope.nombre1 = entierAleatoire( $scope['nbMin'] , $scope['nbMax'] );
@@ -142,9 +134,13 @@
 
 				$('#bravo').css('visibility', 'hidden');
 
+				$('#modalError').on('shown.bs.modal', function () { // lorsque le modal est affiché
+					$('#refaire').focus();
+				});
+
 				$scope.nbErreur ++;
 			}
-			$scope.reponse = '';
+
 			$('#reponse').focus();
 	//	}
 	}
@@ -308,6 +304,18 @@
 		}
 
 	}
+
+	$scope.redo = function() { // ---------------- fonction refaire
+		$('#modalError').on('hidden.bs.modal', function () { // lorsque le modal est caché
+			$('#reponse').focus();
+		})
+	}
+
+		$scope.clean = function() {
+			$scope.prenomCompile = $scope.prenomActuel + '-tablesMultiplication';
+			$localStorage[$scope['prenomCompile']] = [];
+			$scope.prenomTablesMultiplication = [];
+		}
 
 });
 

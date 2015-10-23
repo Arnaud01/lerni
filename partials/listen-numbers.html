@@ -44,7 +44,7 @@
 	<div id="syllabes">
 		<span ng-repeat="son in serie_aleatoire">
 			<button type="button" ng-class="ecriture" class="btn btn-md btn-primary nombre" ng-click="play(serie_aleatoire[$index])">{{serie_aleatoire[$index]}}</button>
-			<audio ng-src="{{'sounds/nombres/' + son + '.ogg'}}" id="{{son}}"></audio>
+			<audio ng-src="{{'sounds/nombres/' + son + '.mp3'}}" id="{{son}}"></audio>
 		</span>
 
 	</div>

@@ -6,29 +6,6 @@
 
 	$scope.$storage = $localStorage;
 
-	var shuffleArray = function(array) {
-		var m = array.length, t, i;
-
-		// While there remain elements to shuffle
-		while (m) {
-		// Pick a remaining element…
-		i = Math.floor(Math.random() * m--);
-
-		// And swap it with the current element.
-		t = array[m];
-		array[m] = array[i];
-		array[i] = t;
-		}
-		return array;
-	}
-
-	var audio = document.getElementById('audio');
-
-	$scope.playAudio = function() {
-		audio.play();
-	}
-
-
 
 	$('#bravo').css('visibility', 'hidden');
 	$('#bloc-central').hide();
@@ -55,6 +32,57 @@ $http.get('data/syllabes.json').success(function(data) {
 
 
 		// -------------------------- fonctions ------------------------------------------//
+
+
+		$scope.hear = function() {
+
+			var audio = document.createElement('audio');
+
+			var source= document.createElement('source');
+
+			if (audio.canPlayType('audio/ogg;')) {
+				source.type= 'audio/ogg';
+				source.src= 'sounds/syllabes/' + $scope.serie_aleatoire[$scope.n] + '.ogg';
+
+			} else {
+				source.type= 'audio/mpeg';
+				source.src= 'sounds/syllabes/' + $scope.serie_aleatoire[$scope.n] + '.mp3';
+			}
+
+			audio.appendChild(source);
+
+			audio.play();
+		}
+
+		$scope.see = function() { // --------------fonction see()
+
+			$('#modalSee').modal('show');
+
+
+			$('#modalSee').on('shown.bs.modal', function () { // lorsque le modal est affiché
+				$('#fermer').focus();
+			});
+
+			$scope.nbErreur ++;
+
+		}
+
+		var shuffleArray = function(array) {
+			var m = array.length, t, i;
+
+			// While there remain elements to shuffle
+			while (m) {
+			// Pick a remaining element…
+			i = Math.floor(Math.random() * m--);
+
+			// And swap it with the current element.
+			t = array[m];
+			array[m] = array[i];
+			array[i] = t;
+			}
+			return array;
+		}
+
 
 		$scope.initialise = function(serie) { // ---------------------- fonction initialise()
 
@@ -87,22 +115,20 @@ $http.get('data/syllabes.json').success(function(data) {
 
 		$scope.bonneReponse = '';
 
-		$scope.affiche();
+		$scope.display();
 
 	}
 
 
-		$scope.affiche = function(paramAlertSuccess) { // --------------fonction affiche()
+		$scope.display = function(paramAlertSuccess) { // --------------fonction display()
 
 		if (paramAlertSuccess===true) { // si on vient de réussir, affichage Alert Success
 
 			$('#bravo').css('visibility', 'visible');
-			
+
 		}
 
-		var son = new Audio('sounds/syllabes/' + $scope.serie_aleatoire[$scope.n] + '.ogg');
-
-		son.play();
+		$scope.hear();
 
 		$('#inputEleve').focus();
 
@@ -308,10 +334,10 @@ $http.get('data/syllabes.json').success(function(data) {
 
 
 			if (param===true) { // si on vient de réussir
-				$scope.affiche(true);
+				$scope.display(true);
 			}
 			else { // si erreur et clic sur continuer
-				$scope.affiche(false);
+				$scope.display(false);
 			}
 		}
 
@@ -322,12 +348,23 @@ $http.get('data/syllabes.json').success(function(data) {
 			$('#inputEleve').focus();
 		})
 
-		var son = new Audio('sounds/syllabes/' + $scope.serie_aleatoire[$scope.n] + '.ogg');
-
-		son.play();
+		$scope.hear();
 	}
 
-	$scope.effacer = function() {
+	$scope.close = function() { // ---------------- fonction close
+		$('#modalSee').on('hidden.bs.modal', function () { // lorsque le modal est caché
+			$('#inputEleve').focus();
+		})
+
+		$scope.hear();
+	}
+
+	$scope.listenAgain = function() { // ---------------- fonction réécouter
+		$('#inputEleve').focus();
+		$scope.hear();
+	}
+
+	$scope.clean = function() {
 		$scope.prenomCompile = $scope.prenomActuel + '-ecrireSyllabes';
 		$localStorage[$scope['prenomCompile']] = [];
 		$scope.prenomEcrireSyllabes = [];
@@ -336,6 +373,7 @@ $http.get('data/syllabes.json').success(function(data) {
 	$scope.clearInput = function() {
 		$scope.reponseEleve = '';
 		$('#inputEleve').focus();
+		$scope.hear();
 	}
 
 });

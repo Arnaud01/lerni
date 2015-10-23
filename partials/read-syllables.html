@@ -61,9 +61,7 @@
 <div id="bloc-central" class="bloc-central">
 <div class="col-md-6 text-center">
 
-		<button type="button" class="btn btn-default btn-lg play" ng-click="playAudio()"><span class="glyphicon glyphicon-play"></span></button>
-
-	<audio ng-src="{{'sounds/syllabes/' + syllabes[serie][n] + '.ogg'}}" id="audio"></audio>
+		<button type="button" class="btn btn-default btn-lg play" ng-click="hear()"><span class="glyphicon glyphicon-play"></span></button>
 
 </div>
 
@@ -98,7 +96,7 @@
 
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" data-dismiss="modal" id="refaire">Refaire <span class='glyphicon glyphicon-repeat'></span></button>
+				<button type="button" class="btn btn-primary" data-dismiss="modal" id="refaire" ng-click="hear()">Refaire <span class='glyphicon glyphicon-repeat'></span></button>
 				<button type="button" class="btn btn-default" data-dismiss="modal" ng-click="decide(false)">Continuer <span class='glyphicon glyphicon-arrow-right'></span></button>
 			</div>
 		</div>

@@ -13,7 +13,11 @@
 
 						<button type="button" class="btn btn-lg btn-default" ng-click="play(cellule)">{{cellule}}</button>
 
-						<audio ng-src="{{'sounds/nombres/' + cellule + '.ogg'}}" id="{{cellule}}"></audio>
+						<audio id="{{cellule}}">
+							 <source ng-src="{{'sounds/nombres/' + cellule + '.ogg'}}" type="audio/ogg">
+							 <source ng-src="{{'sounds/nombres/' + cellule + '.mp3'}}" type="audio/mpeg">
+						   Votre navigateur ne supporte pas l'élément audio.
+						   </audio>
 
 					</td>
 

@@ -23,25 +23,6 @@
 		}
 
 
-
-	  function entierAleatoire(mini, maxi) { 	// fonction : trouver un nombre entier aléatoire
-
-  		var nb = mini + (maxi+1-mini)*Math.random();
-
-  		return Math.floor(nb);
-  	}
-
-	$scope.effacer = function() {
-		$scope.prenomCompile = $scope.prenomActuel + '-calculAdditions';
-		$localStorage[$scope['prenomCompile']] = [];
-		$scope.prenomCalculAdditions = [];
-	}
-
-	$scope.clearInput = function() {
-		$scope.reponseEleve = '';
-		$('#inputEleve').focus();
-	}
-
 	$(".pop").popover({ html : true, trigger: 'focus' }); // active le popover dans le modal : afficher la réponse
 
 	$('#bloc-central').hide();
@@ -69,6 +50,14 @@
 
 	// -------------------------- fonctions ------------------------------------------//
 
+	function entierAleatoire(mini, maxi) { 	// fonction : trouver un nombre entier aléatoire
+
+	  		var nb = mini + (maxi+1-mini)*Math.random();
+
+	  		return Math.floor(nb);
+	  	}
+
+
 	$scope.initialise = function(nbMin, nbMax,sommeMax, nbDeCalculs, serie) { // ------------------------ fonction initialise()
 
 		$('#bravo').css('visibility', 'hidden');
@@ -93,15 +82,17 @@
 		$scope.nbDeCalculs = nbDeCalculs;
 		$('#bloc-central').show();
 
-		$scope.nouveauCalcul(false);
+		$scope.newCalculation(false);
 	}
 
-	$scope.nouveauCalcul = function(paramAlertSuccess) { // --------------fonction nouveauCalcul()
+	$scope.newCalculation = function(paramAlertSuccess) { // --------------fonction nouveau Calcul newCalculation()
 
 		if (paramAlertSuccess===true) { // si on vient de réussir, affichage Alert Success
 
 			$('#bravo').css('visibility', 'visible');
 		}
+
+		$scope.reponse = '';
 
 		$('#reponse').focus();
 
@@ -124,8 +115,6 @@
 
 	$scope.check = function(reponse) { // --------------------- fonction check()
 
-		if ($scope.reponse) { // si l'input n'est pas vide ou rempli d'espaces
-
 			$scope.reponseEleve = reponse;
 
 			if (reponse===$scope.somme) { // si c'est juste
@@ -146,9 +135,9 @@
 
 				$scope.nbErreur ++;
 			}
-			$scope.reponse = '';
+
 			$('#reponse').focus();
-		}
+
 	}
 
 	$scope.decide = function(param) { // --------------------- fonction decide()
@@ -300,13 +289,25 @@
 		}
 		else {
 			if (param===true) { // si on vient de réussir
-				$scope.nouveauCalcul(true);
+				$scope.newCalculation(true);
 			}
 			else { // si erreur et clic sur continuer
-				$scope.nouveauCalcul(false);
+				$scope.newCalculation(false);
 			}
 		}
 
+	}
+
+	$scope.redo = function() { // ---------------- fonction refaire
+		$('#modalError').on('hidden.bs.modal', function () { // lorsque le modal est caché
+			$('#reponse').focus();
+		})
+	}
+
+	$scope.clean = function() {
+		$scope.prenomCompile = $scope.prenomActuel + '-calculAdditions';
+		$localStorage[$scope['prenomCompile']] = [];
+		$scope.prenomCalculAdditions = [];
 	}
 
 });

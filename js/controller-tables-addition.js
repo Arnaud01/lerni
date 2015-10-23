@@ -42,16 +42,6 @@
 		return array;
 	}
 
-	$scope.effacer = function() {
-		$scope.prenomCompile = $scope.prenomActuel + '-tablesAddition';
-		$localStorage[$scope['prenomCompile']] = [];
-		$scope.prenomTablesAddition = [];
-	}
-
-	$scope.clearInput = function() {
-		$scope.reponseEleve = '';
-		$('#inputEleve').focus();
-	}
 
 	$(".pop").popover({ html : true, trigger: 'focus' }); // active le popover dans le modal : afficher la réponse
 
@@ -115,6 +105,8 @@
 			$('#bravo').css('visibility', 'visible');
 		}
 
+		$scope.reponse = '';
+
 		$('#reponse').focus();
 
 		// $scope.nombre1 = entierAleatoire( $scope['nbMin'] , $scope['nbMax'] );
@@ -127,7 +119,7 @@
 
 	//	if ($scope.reponse) { // si l'input n'est pas vide ou rempli d'espaces
 	// la ligne ci-dessus est commentée sinon le 0 ne marche pas dans l'input
-	
+
 			$scope.reponseEleve = reponse;
 
 			if (reponse===$scope.somme) { // si c'est juste
@@ -142,9 +134,13 @@
 
 				$('#bravo').css('visibility', 'hidden');
 
+				$('#modalError').on('shown.bs.modal', function () { // lorsque le modal est affiché
+					$('#refaire').focus();
+				});
+
 				$scope.nbErreur ++;
 			}
-			$scope.reponse = '';
+
 			$('#reponse').focus();
 		// }
 	}
@@ -307,6 +303,18 @@
 			}
 		}
 
+	}
+
+	$scope.redo = function() { // ---------------- fonction refaire
+		$('#modalError').on('hidden.bs.modal', function () { // lorsque le modal est caché
+			$('#reponse').focus();
+		})
+	}
+
+	$scope.clean = function() {
+		$scope.prenomCompile = $scope.prenomActuel + '-tablesAddition';
+		$localStorage[$scope['prenomCompile']] = [];
+		$scope.prenomTablesAddition = [];
 	}
 
 });
