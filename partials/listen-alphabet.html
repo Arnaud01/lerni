@@ -7,20 +7,17 @@
 	<div class="marginTop overflowAlphabet">
 		<div>
 	<span ng-repeat="lettre in alphabet[0]" >
-		<button type="button" class="btn btn-lg btn-default majusculeAlphabet" ng-click="play(lettre)">{{lettre}}</button>
-		<audio ng-src="{{'sounds/lettres/' + lettre + '.ogg'}}" id="{{lettre}}"></audio>
+		<button type="button" class="btn btn-lg btn-default majusculeAlphabet" ng-click="hear(lettre)">{{lettre}}</button>
 	</span>
 </div>
 		<div>
 	<span ng-repeat="lettre in alphabet[0]" >
-		<button type="button" class="btn btn-lg btn-default scriptAlphabet" ng-click="play(lettre)">{{lettre}}</button>
-		<audio ng-src="{{'sounds/lettres/' + lettre + '.ogg'}}" id="{{lettre}}"></audio>
+		<button type="button" class="btn btn-lg btn-default scriptAlphabet" ng-click="hear(lettre)">{{lettre}}</button>
 	</span>
 </div>
 <div>
 	<span ng-repeat="lettre in alphabet[0]" >
-		<button type="button" class="btn btn-lg btn-default attacheAlphabet" ng-click="play(lettre)">{{lettre}}</button>
-		<audio ng-src="{{'sounds/lettres/' + lettre + '.ogg'}}" id="{{lettre}}"></audio>
+		<button type="button" class="btn btn-lg btn-default attacheAlphabet" ng-click="hear(lettre)">{{lettre}}</button>
 	</span>
 </div>
 </div>

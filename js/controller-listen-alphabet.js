@@ -9,8 +9,25 @@
 		$scope.alphabet = data;
 	});
 
-	$scope.play = function(son) {
-		document.getElementById(son).play();
+	$scope.hear = function(son) {
+
+		var audio = document.createElement('audio');
+
+		var source= document.createElement('source');
+
+		if (audio.canPlayType('audio/ogg;')) {
+			source.type= 'audio/ogg';
+			source.src= 'sounds/lettres/' + son + '.ogg';
+
+		} else {
+			source.type= 'audio/mpeg';
+			source.src= 'sounds/lettres/' + son + '.mp3';
+		}
+
+		audio.appendChild(source);
+
+		audio.play();
+
 	}
 
 
