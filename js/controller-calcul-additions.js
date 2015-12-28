@@ -42,7 +42,15 @@
 	{ "nbMin" : 0, "nbMax" : 500, "sommeMax" : 500,"nbDeCalculs" : 5 },
 	{ "nbMin" : 0, "nbMax" : 500, "sommeMax" : 500,"nbDeCalculs" : 10 },
 	{ "nbMin" : 0, "nbMax" : 1000, "sommeMax" : 1000,"nbDeCalculs" : 5 },
-	{ "nbMin" : 0, "nbMax" : 1000, "sommeMax" : 1000,"nbDeCalculs" : 10 }
+	{ "nbMin" : 0, "nbMax" : 1000, "sommeMax" : 1000,"nbDeCalculs" : 10 },
+	{ "nbMin" : 0, "nbMax" : 10000, "sommeMax" : 10000,"nbDeCalculs" : 5 },
+	{ "nbMin" : 0, "nbMax" : 10000, "sommeMax" : 10000,"nbDeCalculs" : 10 },
+	{ "nbMin" : 0, "nbMax" : 100000, "sommeMax" : 100000,"nbDeCalculs" : 5 },
+	{ "nbMin" : 0, "nbMax" : 100000, "sommeMax" : 100000,"nbDeCalculs" : 10 },
+	{ "nbMin" : 0, "nbMax" : 1000000, "sommeMax" : 1000000,"nbDeCalculs" : 5 },
+	{ "nbMin" : 0, "nbMax" : 1000000, "sommeMax" : 1000000,"nbDeCalculs" : 10 },
+	{ "nbMin" : 0, "nbMax" : 10000000, "sommeMax" : 10000000,"nbDeCalculs" : 5 },
+	{ "nbMin" : 0, "nbMax" : 10000000, "sommeMax" : 10000000,"nbDeCalculs" : 10 }
 	];
 
 	$('#bravo').css('visibility', 'hidden');
